@@ -10,10 +10,13 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow()
+        openFirstView()
+        
         return true
     }
 
@@ -32,5 +35,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate{
+    private func openFirstView() {
+        if UserDefaults.standard.bool(forKey: DefaultConstants.isUserLogin) {
+            window?.rootViewController = AfterLaunchVC()
+            window?.makeKeyAndVisible()
+        }
+        else{
+            window?.rootViewController = AfterLaunchVC()
+            window?.makeKeyAndVisible()
+        }
+    }
 }
 
