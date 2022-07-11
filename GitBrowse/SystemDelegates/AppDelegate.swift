@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     private func openFirstView() {
         if UserDefaults.standard.bool(forKey: DefaultConstants.isUserLogin) {
-            window?.rootViewController = AfterLaunchVC()
+            window?.rootViewController = TabBarVC()
             window?.makeKeyAndVisible()
         }
         else{

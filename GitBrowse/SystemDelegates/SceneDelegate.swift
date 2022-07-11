@@ -55,7 +55,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate{
     private func openFirstView() {
         if UserDefaults.standard.bool(forKey: DefaultConstants.isUserLogin) {
-            window?.rootViewController = AfterLaunchVC()
+            window?.rootViewController = TabBarVC()
             window?.makeKeyAndVisible()
         }
         else{
